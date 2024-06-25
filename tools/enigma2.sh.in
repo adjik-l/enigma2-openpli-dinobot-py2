@@ -42,11 +42,6 @@ elif [ -f /proc/stb/fp/led_brightness ]; then
 	echo "000000ff" > /proc/stb/fp/led_brightness
 fi
 
-if [ -f /proc/stb/fp/nec_ir ]; then
-	echo "1" > /proc/stb/fp/nec_ir
-	[ -f /sys/class/remote/amremote/protocol ] && echo "2" > /sys/class/remote/amremote/protocol
-fi
-
 # Check for sundtek tuner helper lib.
 if [ -e /opt/lib/libmediaclient.so ]; then
 	LIBS="/opt/lib/libmediaclient.so @libdir@/libopen.so.0.0.0"
